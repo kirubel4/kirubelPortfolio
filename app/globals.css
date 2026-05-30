@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #050510;
+  color: #e0e0e0;
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #050510; }
+::-webkit-scrollbar-thumb { background: #00f5d433; border-radius: 4px; }
+
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+@keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 #00f5d433} 50%{box-shadow:0 0 0 10px transparent} }
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(125px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(125px) rotate(-360deg); }
+}
+@keyframes orbitRev {
+  from { transform: rotate(0deg) translateX(125px) rotate(0deg); }
+  to   { transform: rotate(-360deg) translateX(125px) rotate(360deg); }
+}
+
+a { cursor: none; }
+button { cursor: none; }
