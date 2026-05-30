@@ -1,11 +1,16 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Cursor() {
   const dot = useRef()
   const ring = useRef()
+  const [enabled, setEnabled] = useState(false)
 
   useEffect(() => {
+    const finePointer = window.matchMedia('(pointer: fine)').matches
+    setEnabled(finePointer)
+    if (!finePointer) return
+
     let x = window.innerWidth / 2
     let y = window.innerHeight / 2
     let rx = x, ry = y
@@ -31,6 +36,8 @@ export default function Cursor() {
       cancelAnimationFrame(raf)
     }
   }, [])
+
+  if (!enabled) return null
 
   return (
     <>

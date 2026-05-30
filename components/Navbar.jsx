@@ -29,7 +29,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav style={{
+    <nav className="site-nav" style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       padding: '0 5%', height: 64,
@@ -37,7 +37,7 @@ export default function Navbar() {
       backdropFilter: 'blur(16px)',
       borderBottom: '1px solid rgba(0,245,212,0.08)',
     }}>
-      <div style={{
+      <div className="site-nav__brand" style={{
         fontFamily: "'Space Mono', monospace",
         fontSize: 18, fontWeight: 700, color: '#fff',
       }}>
@@ -46,7 +46,7 @@ export default function Navbar() {
         <span style={{ color: '#00f5d4' }}> /&gt;</span>
       </div>
 
-      <ul style={{ display: 'flex', gap: 28, listStyle: 'none' }}>
+      <ul className="site-nav__links" style={{ display: 'flex', gap: 28, listStyle: 'none' }}>
         {NAV_LINKS.map(n => (
           <li key={n}>
             <button
@@ -65,6 +65,7 @@ export default function Navbar() {
       </ul>
 
       <button
+        className="site-nav__cta"
         onClick={() => scrollTo('Contact')}
         style={{
           padding: '8px 18px',

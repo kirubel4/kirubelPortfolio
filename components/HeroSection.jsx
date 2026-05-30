@@ -9,6 +9,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
+      className="hero-section"
       style={{
         minHeight: "100vh",
         display: "flex",
@@ -19,6 +20,7 @@ export default function HeroSection() {
       }}
     >
       <div
+        className="hero-grid"
         style={{
           maxWidth: 1100,
           margin: "0 auto",
@@ -30,7 +32,7 @@ export default function HeroSection() {
         }}
       >
         {/* Left */}
-        <div>
+        <div className="hero-copy">
           <AnimSection delay={0}>
             <p
               style={{
@@ -86,7 +88,7 @@ export default function HeroSection() {
           </AnimSection>
 
           <AnimSection delay={0.3}>
-            <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <div className="hero-actions" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
               <button
                 onClick={() => scrollTo("projects")}
                 style={{
@@ -134,7 +136,7 @@ export default function HeroSection() {
           </AnimSection>
 
           <AnimSection delay={0.4}>
-            <div style={{ display: "flex", gap: 28, marginTop: 44 }}>
+            <div className="hero-stats" style={{ display: "flex", gap: 28, marginTop: 44 }}>
               {[
                 ["2+", "Years Exp"],
                 ["35+", "Projects"],
@@ -169,6 +171,7 @@ export default function HeroSection() {
         {/* Photo */}
         <AnimSection delay={0.25}>
           <div
+            className="hero-photo"
             style={{
               position: "relative",
               width: 240,
@@ -255,6 +258,7 @@ export default function HeroSection() {
 
       {/* Scroll hint */}
       <div
+        className="hero-scroll-hint"
         style={{
           position: "absolute",
           bottom: 36,

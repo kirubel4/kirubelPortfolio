@@ -35,3 +35,169 @@ body {
 
 a { cursor: none; }
 button { cursor: none; }
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-nav__brand,
+.site-nav__cta,
+.site-nav__links button,
+.hero-actions button,
+.projects-filterbar button,
+.contact-card button {
+  min-height: 44px;
+}
+
+@media (max-width: 640px) {
+  body {
+    cursor: auto;
+  }
+
+  a,
+  button {
+    cursor: pointer;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 4%;
+  }
+
+  .site-footer span {
+    font-size: 12px;
+  }
+
+  .site-nav {
+    height: auto !important;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 4% !important;
+    justify-content: center !important;
+  }
+
+  .site-nav__brand {
+    width: 100%;
+    text-align: center;
+    font-size: 16px !important;
+  }
+
+  .site-nav__links {
+    width: 100%;
+    justify-content: center;
+    gap: 10px !important;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+  }
+
+  .site-nav__links button {
+    font-size: 11px !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .site-nav__cta {
+    width: 100%;
+    max-width: 170px;
+    margin: 0 auto 2px;
+  }
+
+  .hero-section {
+    min-height: auto !important;
+    padding: 150px 4% 80px !important;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    text-align: center;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .hero-actions button {
+    width: 100%;
+  }
+
+  .hero-stats {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px !important;
+  }
+
+  .hero-photo {
+    width: 180px !important;
+    height: 180px !important;
+    margin: 0 auto;
+  }
+
+  .hero-scroll-hint {
+    display: none !important;
+  }
+
+  .about-section,
+  .projects-section,
+  .skills-section,
+  .contact-section {
+    padding: 72px 4% 64px !important;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  .projects-filterbar {
+    justify-content: center;
+    margin-bottom: 24px !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .project-links {
+    flex-direction: column;
+    gap: 8px !important;
+  }
+
+  .project-links a {
+    font-size: 12px !important;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .skills-legend {
+    justify-content: center;
+  }
+
+  .contact-card {
+    padding: 22px !important;
+    border-radius: 14px !important;
+  }
+
+  .contact-form-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-socials {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px !important;
+  }
+}

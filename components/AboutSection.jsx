@@ -4,6 +4,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
+      className="about-section"
       style={{
         padding: "100px 5% 80px",
         background: "rgba(10,10,30,0.6)",
@@ -12,6 +13,7 @@ export default function AboutSection() {
       }}
     >
       <div
+        className="about-grid"
         style={{
           maxWidth: 1100,
           margin: "0 auto",
@@ -133,6 +135,7 @@ export default function AboutSection() {
 
         <AnimSection delay={0.2}>
           <div
+            className="about-cards"
             style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}
           >
             {[

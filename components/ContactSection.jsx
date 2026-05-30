@@ -27,7 +27,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" style={{
+    <section id="contact" className="contact-section" style={{
       padding: '100px 5% 80px',
       position: 'relative', zIndex: 1,
       textAlign: 'center',
@@ -45,11 +45,11 @@ export default function ContactSection() {
         </AnimSection>
 
         <AnimSection delay={0.1}>
-          <div style={{
+          <div className="contact-card" style={{
             background: '#0a0a1e', border: '1px solid #ffffff08',
             borderRadius: 18, padding: 36,
           }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 14 }}>
+            <div className="contact-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 14 }}>
               <input
                 style={inputStyle}
                 type="text" placeholder="Your Name"
@@ -93,7 +93,7 @@ export default function ContactSection() {
         </AnimSection>
 
         <AnimSection delay={0.2}>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 28, marginTop: 40 }}>
+          <div className="contact-socials" style={{ display: 'flex', justifyContent: 'center', gap: 28, marginTop: 40 }}>
             {SOCIALS.map(s => (
               <a
                 key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"

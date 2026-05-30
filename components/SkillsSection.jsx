@@ -38,7 +38,7 @@ function SkillBar({ skill, delay }) {
 export default function SkillsSection() {
   const half = Math.ceil(SKILLS.length / 2)
   return (
-    <section id="skills" style={{
+    <section id="skills" className="skills-section" style={{
       padding: '100px 5% 80px',
       background: 'rgba(10,10,30,0.6)',
       position: 'relative', zIndex: 1,
@@ -52,13 +52,13 @@ export default function SkillsSection() {
           <div style={{ width: 60, height: 3, background: 'linear-gradient(90deg,#00f5d4,transparent)', marginBottom: 44 }} />
         </AnimSection>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48 }}>
+        <div className="skills-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48 }}>
           <div>{SKILLS.slice(0, half).map((s, i) => <SkillBar key={s.name} skill={s} delay={i * 0.07} />)}</div>
           <div>{SKILLS.slice(half).map((s, i) => <SkillBar key={s.name} skill={s} delay={i * 0.07 + 0.3} />)}</div>
         </div>
 
         <AnimSection delay={0.4}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 36 }}>
+          <div className="skills-legend" style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 36 }}>
             {Object.entries(CAT_COLORS).map(([cat, color]) => (
               <span key={cat} style={{
                 display: 'inline-block', padding: '4px 12px', borderRadius: 4,

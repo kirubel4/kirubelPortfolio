@@ -21,10 +21,9 @@ export default function Home() {
         <SkillsSection />
         <ContactSection />
       </main>
-      <footer style={{
+      <footer className="site-footer" style={{
         padding: '20px 5%',
         borderTop: '1px solid #ffffff06',
-        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
         position: 'relative', zIndex: 1,
       }}>
         <span style={{ fontFamily: "'Space Mono',monospace", fontSize: 13, color: '#333355' }}>

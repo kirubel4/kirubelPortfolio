@@ -1,10 +1,15 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Particles() {
   const canvas = useRef()
+  const [enabled, setEnabled] = useState(false)
 
   useEffect(() => {
+    const finePointer = window.matchMedia('(pointer: fine)').matches
+    setEnabled(finePointer)
+    if (!finePointer) return
+
     const c = canvas.current
     if (!c) return
     const ctx = c.getContext('2d')
@@ -55,6 +60,8 @@ export default function Particles() {
     window.addEventListener('resize', resize)
     return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', resize) }
   }, [])
+
+  if (!enabled) return null
 
   return (
     <canvas

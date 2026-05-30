@@ -10,7 +10,7 @@ export default function ProjectsSection() {
   const visible = filter === 'All' ? PROJECTS : PROJECTS.filter(p => p.tech.includes(filter))
 
   return (
-    <section id="projects" style={{ padding: '100px 5% 80px', position: 'relative', zIndex: 1 }}>
+    <section id="projects" className="projects-section" style={{ padding: '100px 5% 80px', position: 'relative', zIndex: 1 }}>
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
         <AnimSection delay={0}>
           <p style={{ color: '#00f5d4', fontFamily: "'Space Mono',monospace", fontSize: 11, letterSpacing: '3px', marginBottom: 8 }}>02 // WORK</p>
@@ -21,7 +21,7 @@ export default function ProjectsSection() {
         </AnimSection>
 
         <AnimSection delay={0.1}>
-          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 36 }}>
+          <div className="projects-filterbar" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 36 }}>
             {FILTERS.map(f => (
               <button
                 key={f}
@@ -39,7 +39,7 @@ export default function ProjectsSection() {
           </div>
         </AnimSection>
 
-        <div style={{
+        <div className="projects-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
           gap: 20,
@@ -47,6 +47,7 @@ export default function ProjectsSection() {
           {visible.map((p, i) => (
             <AnimSection key={p.id} delay={i * 0.07}>
               <div
+                className="project-card"
                 style={{
                   background: '#0a0a1e', border: '1px solid #ffffff08',
                   borderRadius: 14, padding: 24, height: '100%',
@@ -85,7 +86,7 @@ export default function ProjectsSection() {
                     }}>{t}</span>
                   ))}
                 </div>
-                <div style={{ display: 'flex', gap: 16 }}>
+                <div className="project-links" style={{ display: 'flex', gap: 16 }}>
                   <a href={p.github} target="_blank" rel="noopener noreferrer" style={{
                     color: '#666688', fontFamily: "'Space Mono',monospace", fontSize: 11,
                     textDecoration: 'none', letterSpacing: '1px', transition: 'color 0.2s',
