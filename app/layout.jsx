@@ -1,8 +1,8 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'YourName — Frontend Engineer',
-  description: 'Frontend Software Engineer specializing in Next.js, React, and TypeScript',
+  title: 'kirubel protfolio',
+  description: 'Software Engineer specializing in Machine Learnign, full stack',
 }
 
 export default function RootLayout({ children }) {
