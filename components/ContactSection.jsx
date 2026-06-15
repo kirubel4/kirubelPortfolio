@@ -39,7 +39,7 @@ export default function ContactSection() {
             Let&apos;s <span style={{ color: '#00f5d4' }}>Work Together</span>
           </h2>
           <div style={{ width: 60, height: 3, background: 'linear-gradient(90deg,#00f5d4,transparent)', margin: '0 auto 20px' }} />
-          <p style={{ color: '#7777aa', fontSize: 15, lineHeight: 1.9, marginBottom: 44 }}>
+          <p style={{ color: '#d5d5eb', fontSize: 15, lineHeight: 1.9, marginBottom: 44 }}>
             I&apos;m currently open to new opportunities. Whether you have a project in mind or just want to connect — my inbox is always open.
           </p>
         </AnimSection>
@@ -99,7 +99,7 @@ export default function ContactSection() {
                 key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                 style={{
                   display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6,
-                  color: '#555577', textDecoration: 'none',
+                  color: '#acacc9', textDecoration: 'none',
                   fontFamily: "'Space Mono',monospace", fontSize: 11, transition: 'color 0.2s',
                 }}
                 onMouseEnter={e => { e.currentTarget.style.color = '#00f5d4'; e.currentTarget.querySelector('.si').style.borderColor = '#00f5d444' }}
