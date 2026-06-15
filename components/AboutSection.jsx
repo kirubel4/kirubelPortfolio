@@ -23,6 +23,7 @@ export default function AboutSection() {
           alignItems: "start",
         }}
       >
+        {/* Left — Text */}
         <div>
           <AnimSection delay={0}>
             <p
@@ -60,67 +61,50 @@ export default function AboutSection() {
           <AnimSection delay={0.1}>
             <p
               style={{
-                color: "#9999bb",
+                color: "#c8c8d8",
                 fontSize: 15,
                 lineHeight: 2,
                 marginBottom: 18,
               }}
             >
-              I'm a <span style={{ color: "#00f5d4" }}>Software Engineer</span>{" "}
-              specializing in Full-Stack Development and ML/AI. I enjoy building
+              I'm a{" "}
+              <span style={{ color: "#fff", fontWeight: 600 }}>
+                Software Engineer
+              </span>{" "}
+              specializing in Full-Stack Development and ML/AI — building
               scalable web applications, intelligent systems, and turning
-              complex ideas into practical solutions.
+              complex ideas into practical, production-ready solutions.
             </p>
 
             <p
               style={{
-                color: "#9999bb",
+                color: "#c8c8d8",
                 fontSize: 15,
                 lineHeight: 2,
-                marginBottom: 24,
+                marginBottom: 32,
               }}
             >
-              With 4 years in software development, including 2 years of
-              professional experience, I’ve worked across frontend, backend, and
-              machine learning projects with a strong focus on clean code,
-              performance, scalability, and user experience.
+              With 4 years in software development — 2 years of professional
+              experience — I've delivered projects across frontend, backend, and
+              machine learning, always prioritising clean architecture,
+              performance, and user experience.
             </p>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: 8,
-                marginTop: 8,
-              }}
-            >
+
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
               {[
-                {
-                  text: "✓ Available for hire",
-                  bg: "#00f5d411",
-                  color: "#00f5d4",
-                  border: "#00f5d433",
-                },
-                {
-                  text: "🌍 Open to remote",
-                  bg: "#7209b711",
-                  color: "#b085f5",
-                  border: "#7209b733",
-                },
-                {
-                  text: "Addis Ababa",
-                  bg: "#f7258511",
-                  color: "#f72585",
-                  border: "#f7258533",
-                },
+                { text: "Available for hire", color: "#00f5d4", border: "#00f5d433", bg: "#00f5d40d" },
+                { text: "Open to remote",     color: "#b085f5", border: "#7209b733", bg: "#7209b70d" },
+                { text: "Addis Ababa",        color: "#f72585", border: "#f7258533", bg: "#f725850d" },
               ].map((t) => (
                 <span
                   key={t.text}
                   style={{
                     display: "inline-block",
-                    padding: "4px 12px",
+                    padding: "5px 14px",
                     borderRadius: 4,
                     fontSize: 11,
                     fontFamily: "'Space Mono',monospace",
+                    letterSpacing: "0.5px",
                     background: t.bg,
                     color: t.color,
                     border: `1px solid ${t.border}`,
@@ -133,6 +117,7 @@ export default function AboutSection() {
           </AnimSection>
         </div>
 
+        {/* Right — Cards */}
         <AnimSection delay={0.2}>
           <div
             className="about-cards"
@@ -140,58 +125,71 @@ export default function AboutSection() {
           >
             {[
               {
-                icon: "⚡",
-                title: "Performance",
-                desc: "Lighthouse 95+ on every project",
+                label: "PERFORMANCE",
+                title: "Optimised by default",
+                desc: "Lighthouse 95+ scores across every project I ship.",
               },
               {
-                icon: "🎨",
-                title: "Design Eye",
-                desc: "Pixel-perfect from Figma to code",
+                label: "DESIGN",
+                title: "Pixel-perfect UI",
+                desc: "Translating Figma designs into precise, living interfaces.",
               },
               {
-                icon: "🔧",
-                title: "Clean Code",
-                desc: "Readable, tested, maintainable",
+                label: "CODE QUALITY",
+                title: "Clean architecture",
+                desc: "Readable, tested, and maintainable at every layer.",
               },
               {
-                icon: "📱",
-                title: "Responsive",
-                desc: "Mobile-first, all devices",
+                label: "RESPONSIVE",
+                title: "All devices",
+                desc: "Mobile-first approach that works flawlessly everywhere.",
               },
             ].map((card) => (
               <div
                 key={card.title}
                 style={{
-                  background: "#0a0a1e",
-                  border: "1px solid #ffffff08",
+                  background: "#07071a",
+                  border: "1px solid #ffffff0a",
                   borderRadius: 12,
-                  padding: 20,
+                  padding: "22px 20px",
                   transition: "all 0.3s",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "#00f5d444";
+                  e.currentTarget.style.borderColor = "#00f5d433";
                   e.currentTarget.style.transform = "translateY(-4px)";
+                  e.currentTarget.style.background = "#0a0a22";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "#ffffff08";
+                  e.currentTarget.style.borderColor = "#ffffff0a";
                   e.currentTarget.style.transform = "none";
+                  e.currentTarget.style.background = "#07071a";
                 }}
               >
-                <div style={{ fontSize: 26, marginBottom: 8 }}>{card.icon}</div>
-                <div
+                <p
+                  style={{
+                    color: "#00f5d4",
+                    fontSize: 9,
+                    fontFamily: "'Space Mono',monospace",
+                    letterSpacing: "2px",
+                    marginBottom: 10,
+                  }}
+                >
+                  {card.label}
+                </p>
+                <p
                   style={{
                     color: "#fff",
                     fontSize: 14,
                     fontWeight: 600,
-                    marginBottom: 4,
+                    marginBottom: 6,
+                    lineHeight: 1.4,
                   }}
                 >
                   {card.title}
-                </div>
-                <div style={{ color: "#555577", fontSize: 12 }}>
+                </p>
+                <p style={{ color: "#6666888", fontSize: 12, lineHeight: 1.7 }}>
                   {card.desc}
-                </div>
+                </p>
               </div>
             ))}
           </div>
