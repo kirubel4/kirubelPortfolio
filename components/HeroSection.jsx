@@ -73,7 +73,7 @@ export default function HeroSection() {
           <AnimSection delay={0.2}>
             <p
               style={{
-                color: "#7777aa",
+                color: "#c8c8d8",
                 fontSize: 16,
                 lineHeight: 1.9,
                 maxWidth: 460,
@@ -88,7 +88,10 @@ export default function HeroSection() {
           </AnimSection>
 
           <AnimSection delay={0.3}>
-            <div className="hero-actions" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <div
+              className="hero-actions"
+              style={{ display: "flex", gap: 14, flexWrap: "wrap" }}
+            >
               <button
                 onClick={() => scrollTo("projects")}
                 style={{
@@ -136,7 +139,10 @@ export default function HeroSection() {
           </AnimSection>
 
           <AnimSection delay={0.4}>
-            <div className="hero-stats" style={{ display: "flex", gap: 28, marginTop: 44 }}>
+            <div
+              className="hero-stats"
+              style={{ display: "flex", gap: 28, marginTop: 44 }}
+            >
               {[
                 ["2+", "Years Exp"],
                 ["35+", "Projects"],
@@ -174,8 +180,8 @@ export default function HeroSection() {
             className="hero-photo"
             style={{
               position: "relative",
-              width: 240,
-              height: 240,
+              width: 360,
+              height: 360,
               flexShrink: 0,
             }}
           >
@@ -218,8 +224,7 @@ export default function HeroSection() {
                   fontFamily: "'Space Mono', monospace",
                   marginTop: 6,
                 }}
-              >
-              </p>
+              ></p>
             </div>
             {/* Orbit dots */}
             <div
