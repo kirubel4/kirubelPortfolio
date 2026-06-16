@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import AnimSection from './AnimSection'
 
 const SOCIALS = [
@@ -8,15 +9,42 @@ const SOCIALS = [
   { label: 'Email',    icon: '@',  href: 'mailto:kirubelayele2127@gmail.com' },
 ]
 
+// ── Replace these three values with your own from emailjs.com ──
+const EMAILJS_SERVICE_ID  = 'service_u4hhk8o'
+const EMAILJS_TEMPLATE_ID = 'template_5pi5pxb'
+const EMAILJS_PUBLIC_KEY  = '4znBxQ_V4NGZTCwV6'
+// ──────────────────────────────────────────────────────────────
+
 export default function ContactSection() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
-  const [sent, setSent] = useState(false)
+  const [sent, setSent]     = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError]   = useState('')
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!form.name || !form.email) return
-    setSent(true)
-    setTimeout(() => setSent(false), 3000)
-    setForm({ name: '', email: '', message: '' })
+    setLoading(true)
+    setError('')
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name:    form.name,
+          from_email:   form.email,
+          message:      form.message,
+        },
+        EMAILJS_PUBLIC_KEY,
+      )
+      setSent(true)
+      setForm({ name: '', email: '', message: '' })
+      setTimeout(() => setSent(false), 3000)
+    } catch {
+      setError('Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const inputStyle = {
@@ -75,19 +103,27 @@ export default function ContactSection() {
               onFocus={e => e.target.style.borderColor = '#00f5d444'}
               onBlur={e => e.target.style.borderColor = '#ffffff11'}
             />
+            {error && (
+              <p style={{ color: '#ff6b6b', fontFamily: "'Space Mono',monospace", fontSize: 12, marginBottom: 10 }}>
+                {error}
+              </p>
+            )}
             <button
               onClick={handleSubmit}
+              disabled={loading}
               style={{
                 width: '100%', padding: 15,
                 background: sent ? '#06d6a0' : '#00f5d4',
                 border: 'none', borderRadius: 8, color: '#050510',
                 fontFamily: "'Space Mono',monospace", fontSize: 13,
                 fontWeight: 700, letterSpacing: '1px', transition: 'all 0.3s',
+                opacity: loading ? 0.7 : 1,
+                cursor: loading ? 'not-allowed' : 'pointer',
               }}
-              onMouseEnter={e => { if (!sent) e.currentTarget.style.boxShadow = '0 8px 30px #00f5d433' }}
+              onMouseEnter={e => { if (!sent && !loading) e.currentTarget.style.boxShadow = '0 8px 30px #00f5d433' }}
               onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}
             >
-              {sent ? '✓ Message Sent!' : 'Send Message →'}
+              {sent ? '✓ Message Sent!' : loading ? 'Sending...' : 'Send Message →'}
             </button>
           </div>
         </AnimSection>
