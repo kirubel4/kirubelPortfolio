@@ -13,7 +13,6 @@ const SOCIALS = [
 const EMAILJS_SERVICE_ID  = 'service_u4hhk8o'
 const EMAILJS_TEMPLATE_ID = 'template_5pi5pxb'
 const EMAILJS_PUBLIC_KEY  = '4znBxQ_V4NGZTCwV6'
-// ──────────────────────────────────────────────────────────────
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
